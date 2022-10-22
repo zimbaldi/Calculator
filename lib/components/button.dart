@@ -1,6 +1,6 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Button extends StatelessWidget {
   static const DARK = Color.fromRGBO(82, 82, 82, 1);
@@ -12,19 +12,22 @@ class Button extends StatelessWidget {
   final Color color;
   final void Function(String) cb;
 
-  Button({
+  const Button({
+    super.key,
     required this.text,
     this.big = false,
     this.color = DEFAULT,
     required this.cb,
   });
-  Button.big({
+  const Button.big({
+    super.key,
     required this.text,
     this.big = true,
     this.color = DARK,
     required this.cb,
   });
-  Button.operation({
+  const Button.operation({
+    super.key,
     required this.text,
     this.big = false,
     this.color = OPERATION,
@@ -39,7 +42,7 @@ class Button extends StatelessWidget {
         style: ElevatedButton.styleFrom(backgroundColor: DEFAULT),
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white, fontSize: 32, fontWeight: FontWeight.w200),
         ),
         onPressed: () => cb(text),

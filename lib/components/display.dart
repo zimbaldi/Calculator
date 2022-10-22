@@ -5,7 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 class Display extends StatelessWidget {
   final String text;
 
-  Display(this.text);
+  const Display(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {

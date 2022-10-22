@@ -1,13 +1,10 @@
 import 'package:calculator/components/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'button.dart';
 
 class ButtonRow extends StatelessWidget {
   final List<Button> buttons;
 
-  ButtonRow(this.buttons);
+  const ButtonRow(this.buttons, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +16,7 @@ class ButtonRow extends StatelessWidget {
           list.isEmpty
               ? list.add(b)
               : list.addAll([
-                  SizedBox(
+                  const SizedBox(
                     width: 1,
                   ),
                   b
